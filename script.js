@@ -3,11 +3,9 @@ const newButton = document.querySelector(".newButton");
 const resetButton = document.querySelector(".resetButton");
 
 let gridPref = 10;
-const boxSize = 30;
+let boxSize = 30;
 let containerWidth = (boxSize+2) * gridPref;
 container.style.width = `${containerWidth}px`
-// console.log(containerWidth)
-// const userGridPref = prompt('Whats your preferred grid?');
 
 function createSquares() {
     container.innerHTML = "";
@@ -25,9 +23,6 @@ function createSquares() {
             event.target.style.backgroundColor = "#fef900";
         })
         }
-
-    
-
 }
 
 function resetGrid(){
@@ -36,11 +31,26 @@ function resetGrid(){
 
 function newGrid(){
     gridPref = prompt('Whats your preferred grid?');
-    containerWidth = (boxSize+2) * gridPref;
-    container.style.width = `${containerWidth}px`;
     
-    console.log(gridPref, containerWidth);
-    createSquares();
+    if (gridPref <= 100){
+        if (gridPref >= 32){
+            boxSize = boxSize/2;
+        }
+        if (gridPref >= 64){
+            boxSize = boxSize/4;
+        }
+        containerWidth = (boxSize+2) * gridPref;
+        container.style.width = `${containerWidth}px`;
+        container.style.maxWidth = "960px";
+        
+        console.log(gridPref, containerWidth);
+        createSquares();
+        boxSize = 30;
+    }
+    else{
+        alert('Your Grid preference exceeds 100!')
+    }
+    
 }
 
 createSquares();
