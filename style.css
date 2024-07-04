@@ -1,0 +1,22 @@
+body{
+    background-color: #b90001;
+}
+
+h2{
+    text-shadow: -1px -0px 0 #d9d9da, 0px -0px 0 #d9d9da, -0px 0px 0 #d9d9da, 0px 0px 0 #d9d9da;}
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin: 0;
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 2px; */
+}
